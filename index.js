@@ -11,7 +11,10 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json())
-app.use(cors())
+app.use(cors({
+    origin: 'https://fernandobelotto.dev',
+    methods: ['POST']
+}))
 
 app.post('/', (req, res) => {
     sendEmail({
