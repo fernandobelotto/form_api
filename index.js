@@ -14,12 +14,12 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.post('/', (req, res) => {
-    console.log('message received: ', JSON.stringify(req.body))
     sendEmail({
         email: req.body?.email || 'no email received',
         message: req.body?.message || 'no message received',
         name: req.body?.name || 'no name received'
     })
+    res.send({ status: "ok" })
 })
 
 app.listen(PORT, () => {
