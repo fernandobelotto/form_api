@@ -18,5 +18,4 @@ export default async function sendEmail({ email, name, message }) {
     };
 
     await transporter.sendMail(mailOptions).catch((error) => { console.log(error); });
-    console.log('email sent to gmail account')
 }
